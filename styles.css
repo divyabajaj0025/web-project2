@@ -70,3 +70,32 @@ ol{
     padding:30px;
     list-style-type:upper-alpha;
 }
+
+.clothing-items td, .clothing-items th{
+    border:#893101 solid;
+    margin:0px;
+    padding:0px;
+    text-align: left;
+}
+/* th{
+    border:#893101 solid;
+    margin:0px;
+} */
+tr{
+    margin:0px;
+    padding:0px;
+}
+.clothing-items{
+    border-collapse: collapse;
+}
+form{
+    width:fit-content;
+    padding:5px;
+    margin:auto;
+}
+fieldset{
+    padding:5px;
+}
+legend{
+    text-align: center;
+}
