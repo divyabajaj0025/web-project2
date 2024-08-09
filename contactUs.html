@@ -4,6 +4,38 @@
         <title>Contact Us | Shopping</title>
         <link rel="stylesheet" href="styles.css">
         <link rel="shortcut icon" href="images/shopping-icon.png">
+        <script>
+            function validate()
+            {
+                let uname = document.contactUs.uname.value;
+                let phone = document.contactUs.phone.value;
+                let password = document.contactUs.pwd.value;
+                let cpassword = document.contactUs.cpwd.value;
+                let dob = document.contactUs.dob.value;
+                let email = document.contactUs.email.value;
+                let msg = document.contactUs.msg.value;
+
+                if(uname=="" || phone=="" || password=="" || cpassword=="" || email=="" || msg=="" || dob=="")
+                {
+                    alert("Fill in all the fields")
+                }
+                else{
+                    if(password.length <8 || password.length > 20)
+                        alert("Password should be between 8-20 characters long")
+                    else{
+                        if(password != cpassword)
+                            alert("Password and Confirm Password should match")
+                        else{
+                            if(phone.length != 10)
+                                alert("Phone number should be 10 digits")
+                            else{
+                                alert("Form submitted successfully!")
+                            }
+                        }
+                    }
+                }
+            }
+        </script>
     </head>
     <body>
         <header>
@@ -18,7 +50,7 @@
             </ul>
         </header>
         <div class="content">
-            <form>
+            <form name="contactUs">
             <fieldset>
             <legend>Contact Us</legend>
                 <table>
@@ -28,7 +60,7 @@
                     </tr>
                     <tr>
                         <td><label>Phone:</label></td>
-                        <td><input name="phone" type="text"></td>
+                        <td><input name="phone" type="tel"></td>
                     </tr>
                     <tr>
                         <td><label>Password:</label></td>
@@ -43,7 +75,7 @@
                         <td><input name="email" type="email"></td>
                     </tr>
                     <tr>
-                        <td><label>DOB:</label></td>
+                        <td><label>Date of Birth:</label></td>
                         <td><input name="dob" type="date"></td>
                     </tr>
                     <tr>
@@ -51,7 +83,7 @@
                         <td><input name="msg" type="text"></td>
                     </tr>
                     <tr>
-                        <td align="center" colspan="2"><input type="submit" value="Submit"></td>
+                        <td align="center" colspan="2"><input type="submit" value="Submit" onclick="validate();"></td>
                     </tr>
                 </table>
             </fieldset>
